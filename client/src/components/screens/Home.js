@@ -11,7 +11,7 @@ const Home = () =>{
                     <img src="https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"/>
                 </div>
                 <div className="card-content">
-                <i class="material-icons">favorite</i>
+                <i className="material-icons" style={{color:"red"}}>favorite</i>
                     <h6>Title</h6>
                     <p>this is amazoing post</p>
                     <input type="text" placeholder="add a comment"/>
@@ -23,7 +23,7 @@ const Home = () =>{
                     <img src="https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"/>
                 </div>
                 <div className="card-content">
-                <i class="material-icons">favorite</i>
+                <i className="material-icons" style={{color:"red"}}>favorite</i>
                     <h6>Title</h6>
                     <p>this is amazoing post</p>
                     <input type="text" placeholder="add a comment"/>
@@ -35,7 +35,7 @@ const Home = () =>{
                     <img src="https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"/>
                 </div>
                 <div className="card-content">
-                <i class="material-icons">favorite</i>
+                <i className="material-icons" style={{color:"red"}}>favorite</i>
                     <h6>Title</h6>
                     <p>this is amazoing post</p>
                     <input type="text" placeholder="add a comment"/>
