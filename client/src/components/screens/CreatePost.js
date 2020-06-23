@@ -1,10 +1,13 @@
 import React,{useState} from 'react';
-
+import M from 'materialize-css';
+import {useHistory} from 'react-router-dom';
 
 const CreatePost = () =>{
+    const history = useHistory()
     const [title,setTitle] = useState("")
     const [body,setBody] = useState("")
     const [image,setImage] = useState("")
+    const [url,setUrl] = useState("")
 
     const postDetails = () => {
         const data = new FormData()
@@ -17,12 +20,36 @@ const CreatePost = () =>{
         })
         .then(res=>res.json())
         .then(data=>{
-            console.log(data)
+            setUrl(data.url)
         })
         .catch(err=>{
             console.log(err)
         })
+        fetch("/createpost",{
+            method:"post",
+            headers:{
+                "Content-type":"application/json"
+            },
+            body:JSON.stringify({
+                title,
+                body,
+                pic:url
+            })
+        }).then(res=>res.json())
+        .then(data=>{
+            if(data.error){
+             M.toast({html: data.error,classes:"#e53935 red darken-1"})
+            }
+            else{
+                M.toast({html:"Post Created",classes:"#43a047 green darken-1"})
+                history.push('/')
+            }
+        }).catch(err=>{
+            console.log(err)
+        })
     }
+
+    
     return (
         <div className="card input-filed"
         style={{margin:"30px auto",
